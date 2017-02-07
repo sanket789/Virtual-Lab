@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual Laboratory in Satellite Modeling & Simulation | Thermals</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<script src="scripts/AC_ActiveX.js" type="text/javascript"></script>
+<script src="scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+</head>
+<body id="top">
+<div id="wrapper">
+<div id="blank">
+<div id="main">
+<div id="search">
+<div id="logo">Virtual Laboratory in Satellite Modeling & Simulation<a href="#"></a></div>
+</div>
+	<div id="menu">
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="credits.html">Credits</a></li>
+		<li><a href="http://www.aero.iitb.ac.in/pratham">About ISSP</a></li>
+<li><a href="Documentation.html">Documentation</a></li>
+		</ul>
+
+</div>
+    <div id="page" style="text-align:justify;">
+      <h2>Analysis of Thermals Sub-System
+</h2>
+      <p>Like a human body, the Satellite can survive only if its temperature is maintained within specific limits. These limits, in the case of a Satellite, come from the components placed inside the Satellite. Most military grade components can work between -40<sup>o</sup> C to +85<sup>o</sup> C. Some sensitive components like the battery require the temperature to be within 0<sup>o</sup> C to 40<sup>o</sup> C.  Sensors used in ‘Thermal imaging’ require temperatures way below freezing point. It is the job of Thermals Sub-System to maintain the temperatures within the Satellite as needed. </p>
+      <p>Being in an orbit around Earth is not cool! It can get ‘severely hot’ and ‘chillingly cold’. It is like shuttling between a hot oven and a deep freezer. The orbit decides how long the Satellite stays in each. When the Satellite is in Position 1 (Figure below), it receives solar radiation without the protective umbrella of Earth’s atmosphere. At Position 2 it is in eclipse and experiences the chilling coldness of space. If adequate attention is not paid, one can expose Satellite to extreme temperatures ranging from -100<sup>o</sup> C to +200<sup>o</sup> C in an orbit! </p>
+      <div align="center"><img src="images/image4.jpg" alt="Sun - Earth" /></div>
+      <p>Obviously the thing that heats up the Satellite is the same thing that heats up the Earth, i.e. the hot sun. When rays of light hit the surface of the Satellite, some of it is absorbed by the Satellite and the rest is reflected back. This process is called ‘radiation’. The fraction of radiation absorbed from the total incident on the surface, is denoted by the term called ‘absorbtivity factor’ which depends on the material used to make the surface. The Thermal Sub-System designers play around with the absorbtivity factor of the surface by coating it with various paints, and can thus control the amount of heat absorbed by the Satellite. If the absorbtivity factor is increased, more heat will be absorbed and the overall temperature of the Satellite will increase; and similarly if the absorbtivity factor is decreased, less heat will be absorbed and the overall temperature of the Satellite will decrease. This is called passive thermal control since no power is spent in controlling temperature. Radiation also helps in removing heat from the Satellite body, by expelling the heat out to free space. </p>
+      <p>Once the Satellite absorbs heat, the heat travels to all its parts through a process called conduction; which is the reason for the frying pan to heat itself and pass it on to what it is cooking. Metals are best at conducting heat whereas non-metals and plastics are worst at it. The entire Satellite structure is made of metals hence heat flows around easily. The third mode of heat transfer, convection, is not possible in space because of lack of atmosphere. Hence, for solving the Thermal Design problem of the Satellite, the processes of radiation and conduction need to be thoroughly understood and applied.
+</p>
+      <p>Let us consider 6-sided cuboid shaped Satellites. Following terminology is used to designate each of its sides.</p>
+      <ul>
+      	<li>
+      	  <p>Nadir Side – Side pointing towards Earth</p>
+      	</li>
+        <li>
+          <p>Zenith Side – Side  pointing away from Earth</p>
+        </li>
+        <li>
+          <p>Leading Side – Side pointing towards the  direction of Velocity</p>
+        </li>
+        <li>
+          <p>Lagging Side – Side pointing away from the  direction of Velocity</p>
+        </li>
+        <li>
+          <p>Sun Side – Side that always faces the Sun</p>
+        </li>
+        <li>
+          <p>Antisun Side – Side that never faces the  Sun</p>
+        </li>
+      </ul>
+	   <p> The amount of heat falling on each side of a cuboid shaped Satellite depends on where it is in its orbit and its position relative to Sun and Earth.</p>
+	   <p> Let us perform the virtual experiment in Thermals. The experiment is divided into two parts. In the first part, you will be providing the orbital parameters. Using those parameters, the code will compute the solar radiaiton incident on each face. You can download this data or view it in a graphical format.</p>
+<p> The second part of the experiment aims at computing the face average temperatures as a function of time for the given orbit. It computes the temperatures for 5 orbits. So after viewing the solar radiation graphs you can move ahead to input the satellite parameters which define the geometry, material properties and other loads incident on the satellite. On submitting this data the code will compute the face average temperatures. The computing may take some time. So be patient.</p>
+<div align="center">
+  <h1><a href="equitorial.html"><img src="images/equitorial.jpg" alt="Equitorial Orbit" width="194" height="113" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      <a href="polar.html"><img src="images/polar.jpg" alt="Polar Orbit" width="194" height="113" border="0" /></a> </h1>
+</div>
+      <div id="footer">
+IIT Bombay
+</div>
+</div>
+</div>
+</div>
+</html>
