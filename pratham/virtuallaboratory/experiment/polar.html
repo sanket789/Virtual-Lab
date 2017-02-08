@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual Laboratory in Satellite Modeling & Simulation | Polar</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<style type="text/css">
+#submit{
+	height:50px;
+	width:80px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.time{
+width:40px;}
+</style>
+</head>
+<body id="top">
+<div id="wrapper">
+<div id="blank">
+<div id="main">
+<div id="search">
+<div id="logo">Virtual Laboratory in Satellite Modeling & Simulation<a href="#"></a></div>
+</div>
+	<div id="menu">
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="credits.html">Credits</a></li>
+		<li><a href="http://www.aero.iitb.ac.in/pratham">About ISSP</a></li>
+		</ul>
+
+</div>
+    <div id="page">
+<h1>Thermals Experiment for Polar Orbit</h1>
+<p style="text-align:justify;">The orbits at go around the Earth’s Poles are called Polar Orbit. The Polar Sunsynchoronous Orbit is a special class of Polar Orbit, where the Satellite always passes over any region on Earth at the same local time. Hence defining the local time, will define the entire orbit for this Satellite. These orbits are used extensively by spy Satellites. Most of the Satellites are launched in Low Earth Orbit, with altitudes within 400km to 1500km.</p>
+<div align="center">Polar Orbit:<br />
+    <img src="images/image7.jpg" alt="Image 7" />
+</div>
+<hr>
+<h2>To Set up an Experiment Choose An Orbit</h2>
+<form action="polar.php" method="get">
+	<input type="hidden" name="orbit" value="Polar" />
+<table border="0" align="center" style="text-align:left">
+    <tr>
+    <td>Altitude(In Kms)</td>
+    <td><input name="radius" value="0" type="text" /></td>
+    </tr>
+    <tr>
+    <td>Inclination (In degrees)</td>
+    <td><input name="inclination" value="0" type="text" /></td>
+    </tr>
+	<tr>
+		<td><input type="Radio" name="DoWhat" value="1" CHECKED /> Get Values</td>
+		<td><input type="Radio" name="DoWhat" value="2" /> Show Graph</td>
+    </table>
+    <div style="text-align:center">
+    <input type="submit" value="Submit" id="submit" /></div>
+</form>
+    </div>
+
+<div id="footer">
+IIT Bombay
+</div>
+</div>
+</div>
+</div>
+</html>

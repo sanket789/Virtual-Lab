@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual Laboratory in Satellite Modeling & Simulation | Construction</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+</head>
+<body id="top">
+<div id="wrapper">
+<div id="blank">
+<div id="main">
+<div id="search">
+<div id="logo">Virtual Laboratory in Satellite Modeling & Simulation<a href="#"></a></div>
+</div>
+	<div id="menu">
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="credits.html">Credits</a></li>
+		<li><a href="http://www.aero.iitb.ac.in/pratham">About Us</a></li>
+		<li><a href="Documentation.html">Documentation</a></li>
+		</ul>
+</div>
+    <div id="page">
+<p>﻿This experiment is aimed at computing the average face temperatures of small satellites. It is divided into two parts. 
+To conduct the analysis it is important to understand the environment satellites operate in. The external loads incident on the satellite
+include solar radiaition from the sun, radiation to outer space, heat dissipation terms from the electronic components. Apart from these
+the faces radiate to each other and conduction also takes place. All the loads except the solar radiation from the sun can be calculated
+using simple formulae. The focus of the first part of the experiment is to estimate these loads. The second part actually computes
+the face average temperatures for the given orbit and satellite parameters. Reference values user are that of Pratham- The student
+satellite project of IIT Bombay for the convenience of the user. </p>
+
+<p>
+The first part of the experiment aims at computing the solar radiaiton incident on the satellite for typical orbits. The inputs from the user include
+the altitude of the orbit, measured from the surface of the earth in kms, and the inclination of the orbit in degrees. In case of an equitorial orbit
+the inclination is the angle made by the plane of the orbit and the equitorial plane. In case of the polar orbit, it is the angle between the plane
+of the orbit and the polar plane. Using these parameters the position of the satellite can be obtained as a function of time. The orientation of
+the satellite is another parameter that needs to be determined in order to compute the solar radiaiton incident on the satellite. For simplicity,
+it has been assumed that the satellite is always oriented such that one of the faces has its normal aligned with the tangent of the satellite
+and one face has its normal aligned with the normal to the orbit in the plane of the orbit. The nomenclature of the faces are:
+</p>
+<ul>
+      	<li>
+      	  <p>Nadir Side – Side pointing towards Earth</p>
+      	</li>
+        <li>
+          <p>Zenith Side – Side  pointing away from Earth</p>
+        </li>
+        <li>
+          <p>Leading Side – Side pointing towards the  direction of Velocity</p>
+        </li>
+        <li>
+          <p>Lagging Side – Side pointing away from the  direction of Velocity</p>
+        </li>
+        <li>
+          <p>Sun Side – Side that always faces the Sun</p>
+        </li>
+        <li>
+          <p>Antisun Side – Side that never faces the  Sun</p>
+        </li>
+      </ul>
+<p> With these assumptions, the normals of all the faces can be determined and the angle made by the faces with the solar rays can be determined
+and hence the solar radiation can be estimated. The Solar flux constant which the solar radiation incident on a square meter of area is assumed
+to be 1353 W/m<sup>2</sup> which is a very good approximation from low earth orbits. The effect of shadowing has also been accounted for. Shadowing means that the
+Satellite is eclipsed by the Earth.
+</p>
+
+<p>The user can download this data and also view it in a graphical format. An animation is provided which  helps in visualizing the 
+orbit in space and also gives an estimation of the relative orientation of faces. With this all the load incident on the satellite are known.
+</p>
+
+<p>The second part of the experiment aims at computing the face average temperatures for a particular orbit and given satellite parameters.
+This sections is further divided into the following sub-sections:
+</p>
+
+<ul>
+      	<li>
+      	  <p>Geometry</p>
+      	</li>
+        <li>
+          <p>Meshing</p>
+        </li>
+        <li>
+          <p>Material  Properties</p>
+        </li>
+        <li>
+          <p>Loads</p>
+        </li>
+        <li>
+          <p>Numerical Method</p>
+        </li>
+        <li>
+          <p>Results</p>
+        </li>
+      </ul>
+<p><b>Geometry:</b> <br />
+Typical micro satellites are cubes of the size 10 cm. This code is meant to compute average face temperatures
+for cube satellites only.  For simplicity, the size of the satellite in can be modified in steps on 5 cms and
+can go upto only 30 cms. Pratham is a cube satellite of size approximately 25 cms.
+The constraint of 5 cms shall be explained in the meshing section. The size cannot exceed 30 cms because it increases
+the computation time beyond 15 mins. The code automatically generates 6 faces of the satellite in the form of 2-D plates having a
+finite thickness which can be inputted by the user. The thickness of Pratham is 3 mm. Small satellites generally have a thickness to size ratio of the
+order of 100. This code only computes the temperatures of an empty cube. It does not have any solar panels. Though a very crude approximation,
+it helps one understand the effect of changing various parameters on the temperatures of the faces. These parametric studies
+can used as a tool later on in the design stages of the thermals sub-system of satellites.
+</p>
+<p><b>Meshing:</b><br />
+The code automatically generates a orthogonal hex mesh. The size of each element is 5 cm x 5 cm x thickness. It is assumed that properties do not
+across the thickness of the satellite. The size of the element puts a constraint on the size of the satellite. It is preferable to choose the
+largest possible mesh size in order to minimize the computation time. But as the mesh size is increased the accuracy of the result goes on decreasing.
+The value of 5 cms is not an optimized value but its just for convenience considering the typical size of cube satellites. Satisfactory results
+have been obtained for such coarse meshes.
+
+<p><b>Material Properties:</b><br />
+Next comes definfing the material properties. The relevant properties are the Conductivity of the material, K(W/m-K),
+Specific heat capacity C,(J/kg-K) and the density of the material, r, (kg/m<sup>3</sup>). The typical values for aluminium 6061 which is the material used
+for pratham are 200, 800 and 2000 approximately. The material is assumed to be isotropic and the satellite is assumed to be made of the 
+same material. 
+
+<p>
+One also needs to specify the surface properties for the determination of all kinds of radiation fluxes. External surface absorptivity(alpha-e)
+and emissivity(eplison-e) are required for computing the exact loads on the satellite. Internal surface absorptivity(alpha-i)
+and emissivity(epsilon-i) are required to compute the internal radiation terms. All the four mentioned values lie between 0 and 1.
+</p>
+
+<p>The internal surface for pratham has been planned to be painted black which is alpha-i=0.8 and epsilon-i=0.8. The external surface properties
+of the chosen material are, alpha-e=0.2 and epsilon-e=0.031. They are dependent on the manufacturing processes used to manufacture the material.
+</p>
+
+<p><b>Loads:</b><br />
+The default loads assumed to be incident on the satellite are:</p>
+<ul>
+      	<li>
+      	  <p>Solar Radiation incident on the satellite</p>
+      	</li>
+        <li>
+          <p>Conduction</p>
+        </li>
+        <li>
+          <p>Radiation to free space</p>
+        </li>
+        <li>
+          <p>Internal Radiation</p>
+        </li>
+        <li>
+          <p>Initial Temperature</p>
+        </li>
+      </ul>
+<p> The initial temperature of the satellite is assumed to be 300 K.
+Apart from that a functionality is provided so that the user can enter a average flux value (W/m2) which is to account for the heat dissipation
+for all the electronic components. The user can specify one such value for each face.
+</p>
+
+<p>Numerical Method:</b><br />
+The problem at hand is a coupled transient conduction radiation problem. The numerical method implemented is a finite difference method. 
+The derivatives have been approximated to the first order.
+Conduction has also been modeled by thier corresponding first order numerical derivatives.
+All the other loads have been treated as source terms in the equation. The time step of the simulation is chosen to be 5 seconds .It has been
+obseved that the numerical method is stable for the given mesh size and a range of material properties. Non-physical values of
+material properties may lead to arbitary results. The code computes the temperatures of all elements for 5 cycles.
+</p>
+
+<p> Results: </b> <br />
+The results obtained have been averaged face wise to obtain the face average temperatures as a function time. 
+For convenience, the face average values have been exported for every 30 seconds only. These can be viewed in a graphical form.
+</p>
+
+<p>
+In case any such problem is encountered, do mail the input data to manasrachh@aero.iitb.ac.in.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</html>

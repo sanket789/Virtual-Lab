@@ -1,0 +1,46 @@
+@charset "utf-8";
+.login {
+	color: #F7811F;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* CSS Document */
+
+.bannerrun {
+	background-image: url(../index_files/ban02.jpg);
+	background-repeat: repeat-x;
+}
+.loginname {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.empty
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 5px;
+}
+.borderlr
+{
+	border-left-color: #a14710;
+	border-left-width:1px;
+	border-left-style:solid;
+	border-right-color: #a14710;
+	border-right-width:1px;
+	border-right-style:solid;
+}
+.borderbottom
+{
+	border-bottom-color: #a14710;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	
+}
+.footer
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:9px;
+	color:#FFFFFF;
+}

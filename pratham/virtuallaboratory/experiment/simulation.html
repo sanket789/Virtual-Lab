@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual Laboratory in Satellite Modeling & Simulation | Simulation</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<style type="text/css">
+#submit{
+	height:50px;
+	width:80px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.time{
+width:40px;}
+</style>
+</head>
+<body id="top">
+<div id="wrapper">
+<div id="blank">
+<div id="main">
+<div id="search">
+<div id="logo">Virtual Laboratory in Satellite Modeling & Simulation<a href="#"></a></div>
+</div>
+	<div id="menu">
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="credits.html">Credits</a></li>
+		<li><a href="http://www.aero.iitb.ac.in/pratham">About ISSP</a></li>
+<li><a href="Documentation.html">Documentation</a></li>
+		</ul>
+
+</div>
+    <div id="page">
+<h1>Simulation</h1>
+<h2>Please feed in Data:</h2>
+<form action="input.php" method="get">
+	<input type="hidden" name="orbit" value="Polar" />
+    <table border="0" align="center" style="text-align:left">
+    <tr><td colspan="2"><strong>Geometry Properties:</strong></td></tr>
+    <tr>
+	<td>Size</td>
+    <td><select name="size">
+		<option value="5"> 5 </option>
+		<option value="10"> 10 </option>
+		<option value="15"> 15 </option>
+		<option value="20"> 20 </option>
+		<option value="25"> 25 </option>
+		<option value="30"> 30 </option>
+		</select>cm</td>
+    </tr>
+    <tr>
+    <td>Thickness</td>
+    <td><input name="thickness" value="0" type="text" id="thickness" /> mm</td>
+    </tr>
+    <tr><td colspan="2"><strong>External Surface Properties:</strong></td></tr>
+    <tr>
+      <td>Absorptivity</td>
+      <td><input name="Ex_absorptivity" value="0" type="text" id="Ex_absorptivity" /></td>
+    </tr>
+    <tr>
+      <td>Emissivity</td>
+      <td><input name="Ex_emissivity" value="0" type="text" id="Ex_emissivity" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Internal Surface Properties:</strong></td>
+    </tr>
+    <tr>
+      <td>Absorptivity</td>
+      <td><input name="In_absorptivity" value="0" type="text" id="In_absorptivity" /></td>
+    </tr>
+    <tr>
+      <td>Emmisivity</td>
+      <td><input name="In_emissivity" value="0" type="text" id="In_emissivity" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Material Properties:</strong></td>
+    </tr>
+    <tr>
+      <td>Thermal Conductivity</td>
+      <td><input name="conductivity" value="0" type="text" id="conductivity" /> Watt/m-K</td>
+    </tr>
+    <tr>
+      <td>Specific Heat</td>
+      <td><input name="specificheat" value="0" type="text" id="specificheat" /> Joule/kg-K</td>
+    </tr>
+    <tr>
+      <td>Density</td>
+      <td><input name="density" value="0" type="text" id="density" /> Kg/m<sup>3</sup></td>
+    </tr>
+      <td colspan="2"><strong>Heat generation terms:</strong></td>
+    </tr>
+    <tr>
+      <td>Face 1</td>
+      <td><input name="face1" value="0" type="text" id="face1" /> Watt/m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td>Face 2</td>
+      <td><input name="face2" value="0" type="text" id="face2" /> Watt/m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td>Face 3</td>
+      <td><input name="face3" value="0" type="text" id="face3" /> Watt/m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td>Face 4</td>
+      <td><input name="face4" value="0" type="text" id="face4" /> Watt/m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td>Face 5</td>
+      <td><input name="face5" value="0" type="text" id="face5" /> Watt/m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td>Face 6</td>
+      <td><input name="face6" value="0" type="text" id="face6" /> Watt/m<sup>2</sup></td>
+    </tr>
+    </table>
+    <div style="text-align:center">
+    <input type="submit" value="Submit" id="submit" />
+	<br />
+	<h3> This may take 5-10 minutes. </h3>
+	</div>
+</form>
+    </div>
+
+<div id="footer">
+IIT Bombay
+</div>
+</div>
+</div>
+</div>
+
+</html>

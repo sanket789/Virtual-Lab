@@ -1,0 +1,423 @@
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/heattransfer.js"></script>
+
+<script type="text/javascript">
+if (document.getElementById){
+document.write('<style type="text/css">\n')
+document.write('.dropcontent{display:none;}\n')
+document.write('</style>\n')
+}
+
+function contractall(){
+if (document.getElementById){
+var inc=0
+while (document.getElementById("dropmsg"+inc)){
+document.getElementById("dropmsg"+inc).style.display="none"
+inc++
+}
+}
+}
+
+function expandone(){
+if (document.getElementById){
+var selectedItem=document.dropmsgform.dropmsgoption.selectedIndex
+contractall()
+document.getElementById("dropmsg"+selectedItem).style.display="block"
+}
+}
+
+if (window.addEventListener)
+window.addEventListener("load", expandone, false)
+else if (window.attachEvent)
+window.attachEvent("onload", expandone)
+
+</script>
+<table width="770" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+  		  <td class="Textz">We will now move away from earth&acute;s surface and to orbital heights.  Just outside the Earth&acute;s atmosphere (extraterrestrial irradiance) the solar radiation is about 1350 W/m<sup>2</sup>. That means approximately 25% of the radiation gets reflected/absorbed by the Earth&acute;s atmosphere and only 1000 W/m<sup>2</sup> is incident at surface of earth.   A satellite in orbit is exposed to extraterrestrial irradiance of 1350 W/m<sup>2</sup></td>
+  </tr>
+  		<tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+  		<tr>
+  		  <td class="Textz">Having understood the radiation incident on a single plate, let us now move to the case of a satellite.   A cuboid satellite is nothing but collection of 6 plates that form its 6 faces.  We need to figure out radiation incident on each side independently.  For this we need to understand a bit about orbits.</td>
+  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+  		<tr>
+  		  <td class="Textz">We will first concern ourselves with sun-synchronous (polar) orbits.  Pratham will be in one such orbit.  Let us simplify things a bit and consider earth&acute;s orbit around sun to be circular (actual orbit has very low eccentricity).  Figure 3 shows earth&acute;s orbital plane around the sun and also shows one sun-synchronous orbit.  sun-synchronous orbits are normal to earth&acute;s orbital plane around the sun.<br />
+          <table width="767" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+               <td width="350"><img src="images/general1.gif" title="General Synchronous Orbits" /></td>
+              <td width="352"><img src="images/general2.gif" title="General Synchronous Orbits" /></td>
+            </tr>
+          </table>
+<center><span class="Names">Fig. 3 General Synchronous Orbits</span></center><br />
+          A family of such orbits are possible and we need a method to parametrise them. Consider the plane normal to earth&acute;s orbital plane that contains the line joining sun & earth (let us call this as Earth-Sun-Plane, &acute;ES-Plane&acute; in short. Angle between this ES-Plane and satellite orbital plane can be useful parameter.</td>
+  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">When the angle between satellite orbital plane and ES-Plane is zero we have one sun-synchronous orbit.  This orbit is called 12:00 AM/12:00 PM orbit,  Name suggests that when in this orbit the satellite will be overhead (ie at the same longitude as any observer on earth) at local noon 12:00 AM or local mid-night 12:00 PM.  </td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">When the angle between satellite orbital plane and ES-Plane is 90 degrees we have aonther sun-synchronous orbit.  This orbit is called 06:00 AM/06:00 PM orbit,  Name suggests that when in this orbit the satellite will be overhead (ie at the same longitude as any observer on earth) at local noon 06:00 AM or local mid-night 06:00 PM. </td>
+		  </tr>
+                   
+          <tr>
+  		  <td><table width="650" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+               <td width="350"><!--<img src="images/12ampm1.gif" width="350" height="310" title="12AM/PM Orbit" />-->
+               <div id="dropmsg0" class="dropcontent">
+<img src="images/6ampm1.gif" width="350" height="310" title="6AM/PM Orbit" /></div>
+
+<div id="dropmsg1" class="dropcontent">
+<img src="images/9ampm1.gif" width="350" height="310" title="9AM/PM Orbit" /></div>
+
+<div id="dropmsg2" class="dropcontent">
+<img src="images/12ampm1.gif" width="350" height="310" title="12AM/PM Orbit" /></div>
+
+<div id="dropmsg3" class="dropcontent">
+<img src="images/3ampm1.gif" width="350" height="310" title="3PM/3AM Orbit" /></div><br /><center><span class="Names">Fig. 4 Specfic Sun Synchronous Orbits</span></center>               </td>
+              <td width="300"><!--<img src="images/12ampm2.gif" width="350" height="330" title="12AM/PM Orbit" />-->
+              <span class="Textz" style="color:#CC0000">Click to see some sun-synchronous orbits</span><br /><br />
+              <form name="dropmsgform">
+<select name="dropmsgoption" size="1" style="width:200;border:2px solid #000;" onChange="expandone()" >
+    <option selected>6AM/6PM Orbit</option>
+    <option>9AM/9PM Orbit</option>
+    <option>12AM/12PM Orbit</option>
+    <option>3PM/3AM Orbit</option>
+</select>
+</form></td>
+            </tr>
+          </table></td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">You can now visualize any other ab:cd AM&frasl;ab:cd PM orbit.</td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">One advantage with such an orbit is that the orbit is directly overhead each day at the same local time.  Observations made by the satellite can be of special  use because of this time synchronization. </td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">Now that you have understood the geometry of the sun-synchronous orbits, did you notice a tiny box seen in figures 3 and 4?  Well, that is a satellite in that orbit. We now need to understand what happens to six sides of a satellite in a sun-synchronous orbit.</td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">Any satellite will have a payload (assume it to be a camera) which will be mounted on one particular side of the satellite. The satellite will then have to point that particular side towards the earth. This will be accomplished by a control system on the satellite.  This side is called <strong>nadir</strong> side.  The side opposite to nadir side is the <strong>zenith</strong> side and always points away from earth.  The side that advances (ie. facing the direction of the orbital motion) is the <strong>leading</strong> side and the side opposite to that is the <strong>lagging</strong> side.  Two sides remain to be named now.  All orbits except the 12:00AM/12:00PM will have one of these two sides always exposed to the sun which is called <strong>sun</strong> side.  The side opposite to sun side is called <strong>anti-sun</strong> side. For the 12:00AM/12:00PM orbits both these sides (sun side and anti-sun side) will not receive any radiation.  Colour coding used in the figures 5,6 and 7 to show various sides is as follows.<br /><br /></td>
+  </tr>
+          <tr>
+  		  <td><table border="1" cellspacing="0" cellpadding="0" align="center" style="BORDER-COLLAPSE: collapse" bordercolor="#e8e8e8">
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Nadir</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Violet</p></td>
+            </tr>
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Zenith</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Red</p></td>
+            </tr>
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Leading</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Yellow</p></td>
+            </tr>
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Lagging</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Brown</p></td>
+            </tr>
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Sun</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Green</p></td>
+            </tr>
+            <tr>
+              <td width="132" valign="top" class="Textz"><p><strong>Anti-sun</strong> side</p></td>
+              <td width="90" valign="top" class="Textz"><p>Light blue</p></td>
+            </tr>
+          </table><br /><br /></td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">Consider the 12:00 noon  orbit.&nbsp; This orbit is in the ES-plane,  and we assign to it &Psi;  = 0 (ie. &Psi;  is the angle the satellite orbit makes with ES-plane).&nbsp;<br /><br />
+          Satellite goes around the earth once in time interval T (which is the period of the satellite).   Let us use &eta; to designate the position of the satellite in the orbit, where &eta; goes from 0 degrees to 360 degrees<br /><center><br /><img src="images/sun_combine.gif" title="Sun Images" /></center></td></tr><tr><td class="Textz"><table width="767" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="192" class="Textz"><div align="center" class="Names" >t = 0</div></td>
+    <td width="193" class="Textz"><div align="center" class="Names" >t = T/4</div></td>
+    <td width="196" class="Textz"><div align="center" class="Names" >t = T/2</div></td>
+    <td width="186" class="Textz"><div align="center" class="Names">t = 3T/4</div></td>
+  </tr>
+</table>
+<br /><br /><center><span class='Names'>Fig. 5 : 12AM/12PM Orbit</span></center><br />
+          <ul>
+            <li>Let us reckon time from t=0 when the satellite  comes into view from behind the earth (&eta; = 0  degree).&nbsp; At t=0 it presents only its leading side to  the sun.&nbsp; Nadir, zenith, sun &amp;  anti-sun sides are all at 90 degrees and will not get any radiation.&nbsp; Lagging side is now at the back of the  satellite and blocked by the satellite body.&nbsp;  Kindly note that at t = T we have an identical situation (&eta; =  360 degrees )</li>
+            <li>At t = T/8 the satellite has moved through 45 degrees  in its orbit (&eta;  = 45 degrees) and we will see two of its sides partially, viz leading and  zenith sides.&nbsp; </li>
+            <li>At t=T/4 the satellite is in the earth-sun  orbital plane and we will see only its zenith side (&eta; = 90 degrees).&nbsp; </li>
+            <li>You can similarly argue out what happens for t =  3T/8 (&eta;  = 135 degrees) and t = T/2 (&eta; = 180 degrees).</li>
+            <li>During the period T/2 &lt; t &lt; T the  satellite is behind the earth (180 &lt; &eta; &lt; 360) and is eclipsed  and does not receive any radiation.</li>
+          </ul><br />
+          Table below captures all of the above, where shaded cells indicate &lsquo;no radiation&rsquo;.          </td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		    <td class="Textz"> 
+  		      <table width="732" border="1" align="center" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#e8e8e8">
+              <tr>
+                <td width="578" colspan="8" align="center" class="Textz"><div align="center">For 12:00    noon/12:00 midnight orbit &psi; = 0</div></td>
+              </tr>
+              <tr>
+                <td width="85" rowspan="2" class="Textz"><p align="center">Time elapsed</p></td>
+                <td width="70" rowspan="2" valign="top" class="Textz">
+                    <p align="center">&eta; degrees<br />
+                      Angle in the orbit</p>                </td>
+                <td width="423" colspan="6" class="Textz"><p align="center">&theta; degrees (Angle between sun ray and normal to a side)</p></td>
+              </tr>
+              <tr>
+                <td width="62" class="Textz"><p align="center">Zenith</p></td>
+                <td width="72" class="Textz"><p align="center">Nadir</p></td>
+                <td width="72" class="Textz"><p align="center">Leading</p></td>
+                <td width="78" class="Textz"><p align="center">Lagging</p></td>
+                <td width="67" class="Textz"><p align="center">Sun</p></td>
+                <td width="72" class="Textz"><p align="center">Anti-sun</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">t = 0 = T</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">0</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" class="Textz"><p align="center">0</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+                <td width="67" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">t = T/8</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">45</p></td>
+                <td width="62" class="Textz"><p align="center">45</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">&gt;90</p></td>
+                <td width="72" class="Textz"><p align="center">45</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">&gt;90</p></td>
+                <td width="67" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">t = T/4</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">90</p></td>
+                <td width="62" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">t = 3T/8</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">135</p></td>
+                <td width="62" class="Textz"><p align="center">45</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">&gt;90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">&gt;90</p></td>
+                <td width="78" class="Textz"><p align="center">45</p></td>
+                <td width="67" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">t = T/2</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">180</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+                <td width="78" class="Textz"><p align="center">0</p></td>
+                <td width="67" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+              </tr>
+              <tr>
+                <td width="85" class="Textz"><p align="center">T/2 &lt; t &lt; T</p></td>
+                <td width="70" valign="top" class="Textz"><p align="center">180 to    360</p></td>
+                <td width="423" colspan="6" class="Textz"><p align="center">&larr;&nbsp; Eclipsed by earth &rarr;</p></td>
+              </tr>
+            </table></td>
+  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+  		  <td class="Textz">The 06:00 AM orbit is orthogonal to ES-plane.  For this orbit &psi; = -90.  The orbit never experiences eclipsing and for all times presents its sun-side to the sun.  Anti-sun side is at the rear and blocked by the satellite and all other sides are at 90 degrees.  Table below captures this. <br />
+  		    <center><img src="images/6ampm0_270.gif" /></center></td></tr><tr><td class="Textz"><table width="767" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="192" class="Textz"><div align="center" class="Names" >t = 0</div></td>
+    <td width="193" class="Textz"><div align="center" class="Names" >t = T/4</div></td>
+    <td width="196" class="Textz"><div align="center" class="Names" >t = T/2</div></td>
+    <td width="186" class="Textz"><div align="center" class="Names">t = 3T/4</div></td>
+  </tr>
+</table><br /><br /><center><span class='Names'>Fig. 6 : 6AM/6PM Orbit</span></center><br />
+  		    <table width="732" border="1" align="center" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#e8e8e8">
+              <tr>
+                <td width="578" colspan="8" class="Textz"><p align="center">For 06:00AM    /06:00PM orbit &psi;   = -90</p></td>
+              </tr>
+              <tr>
+                <td width="74" rowspan="2" class="Textz"><p align="center">Time elapsed</p></td>
+                <td width="81" rowspan="2" valign="top" class="Textz"><p align="center">&eta; degrees<br />
+                  Angle in the orbit</p></td>
+                <td width="423" colspan="6" class="Textz"><p align="center">&theta; degrees  (Angle between sun ray and normal to a side)</p></td>
+              </tr>
+              <tr>
+                <td width="62" class="Textz"><p align="center">Zenith</p></td>
+                <td width="72" class="Textz"><p align="center">Nadir</p></td>
+                <td width="72" class="Textz"><p align="center">Leading</p></td>
+                <td width="78" class="Textz"><p align="center">Lagging</p></td>
+                <td width="67" class="Textz"><p align="center">Sun</p></td>
+                <td width="72" class="Textz"><p align="center">Anti-sun</p></td>
+              </tr>
+              <tr>
+                <td width="74" class="Textz"><p align="center">t = 0 = T</p></td>
+                <td width="81" valign="top" class="Textz"><p align="center">0</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+              </tr>
+              <tr>
+                <td width="74" class="Textz"><p align="center">t = T/4</p></td>
+                <td width="81" valign="top" class="Textz"><p align="center">90</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+              </tr>
+              <tr>
+                <td width="74" class="Textz"><p align="center">t = T/2</p></td>
+                <td width="81" valign="top" class="Textz"><p align="center">180</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+              </tr>
+              <tr>
+                <td width="74" class="Textz"><p align="center">t = 3T/4</p></td>
+                <td width="81" valign="top" class="Textz"><p align="center">270</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+              </tr>
+              <tr>
+                <td width="74" class="Textz"><p align="center">t = T = 0</p></td>
+                <td width="81" valign="top" class="Textz"><p align="center">360</p></td>
+                <td width="62" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="78" bgcolor="#CCCCCC" class="Textz"><p align="center">90</p></td>
+                <td width="67" class="Textz"><p align="center">0</p></td>
+                <td width="72" bgcolor="#CCCCCC" class="Textz"><p align="center">180</p></td>
+              </tr>
+            </table></td>
+		  </tr>
+          <tr>
+  		  <td>&nbsp;</td>
+		  </tr>
+          <tr>
+            <td class="Textz">
+              We can now predict the orientation of all 6 sides of a satellite at any position in its orbit for any sun-synchronous orbit; ie. for any 0 < &eta; < 360  and -90 < &psi; < 90.  The &lsquo;Cos &theta;&rsquo; to be used in the cosine law for each of the six sides is given below in terms of &eta; and &psi;.<br /> (note : if the value is negative then that side does not receive any radiation).<br />
+              <center><img src="images/6ampm0_270_color.gif" /></center></td></tr><tr ><td class="Textz"><table width="767" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="192" class="Textz"><div align="center" class="Names" >t = 0</div></td>
+    <td width="193" class="Textz"><div align="center" class="Names" >t = T/4</div></td>
+    <td width="196" class="Textz"><div align="center" class="Names" >t = T/2</div></td>
+    <td width="186" class="Textz"><div align="center" class="Names">t = 3T/4</div></td>
+  </tr>
+</table><br /><center><span class="Names">Fig. 7 : An arbitrary Orbit</span></center>
+<p>
+  Here is how to calculate &psi; and &eta; for a particular a:bAM/a:bPM orbit at a given time.<br />
+  </p>
+<table width="682" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2" class="Textz">For orbits a:b AM/a:b PM , &psi; = (a + b/60 &ndash; 6) 15 &ndash; 90</td>
+    <td width="165" class="Textz">(1)</td>
+  </tr>
+  <tr>
+    <td width="121" class="Textz">&nbsp;</td>
+    <td width="396" class="Textz">&nbsp;</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Textz">Here,</td>
+    <td class="Textz">6 &le; a &le; 12, </td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Textz">&nbsp;</td>
+    <td class="Textz">0 &le; b &le; 60 for a &ne; 12,    b &Xi; 0 for a = 12</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Textz">&nbsp;</td>
+    <td class="Textz">&nbsp;</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="Textz">For orbits a:b AM/a:b PM , &psi; = (a + b/60) 15</td>
+    <td class="Textz">(2)</td>
+  </tr>
+  <tr>
+    <td class="Textz">&nbsp;</td>
+      <td class="Textz">&nbsp;</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Textz">Here,</td>
+    <td class="Textz">0 &le; a &le; 6,</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Textz">&nbsp;</td>
+    <td class="Textz">0 &le; b &le; 60 for a &ne; 6,    b &Xi; 0 for a = 6</td>
+    <td class="Textz">&nbsp;</td>
+  </tr>
+</table>
+<p>We may now check if values of &psi; are correct for 4 orbits shown in one of the figures above.<br />
+</p>
+    <ul>
+      <li>6AM/6PM : Eqn (1), a=6, b=0 <b>&rarr;</b> &psi; = -90</li>
+      <li>9AM/9PM : Eqn (1), a=9, b=0 <b>&rarr;</b> &psi; = -45</li>
+      <li>12AM/12PM (or 0PM/0PM) : Eqn (1), a=12, b=0 <b>&rarr;</b> &psi; = 0; &nbsp;Eqn (2), a=0, b=0 <b>&rarr;</b> &psi; = 0</li>
+      <li>3PM/3AM : Eqn (2), a=3, b=0 <b>&rarr;</b> &psi; = 45<br />
+</li>
+    </ul>
+Zenith side, 	Cos &theta; =  sin &eta;  cos &psi;<br />
+                Nadir side, 	Cos &theta; = -sin &eta;  cos &psi;<br />
+                Leading side, 	Cos &theta; =  cos &eta;  cos &psi;<br />
+                Lagging side, 	Cos &theta; = -cos &eta;  cos &psi;<br />
+                Sun side side, 	Cos &theta; =  sin &psi;<br />
+              Anti sun side, 	Cos &theta; = -sin &psi;
+                <p>It must be noted that for 180 < &eta; < 360 the satellite is eclipsed except for &psi; &plusmn; 90.</p>
+                <p>We have shown you many figures of Sun, Earth, Earth&rsquo;s orbit around Sun, satellite, satellite&rsquo;s orbit around Earth, etc.  Hope you have noticed that these are not to scale.  So, avoid forming a mental picture of relative sizes of these entities based on these figures.</p>  
+
+<p>In explaining the solar radiation received by the satellite we have neglected the height of satellite above earth.  We implied that for 0 < &eta; < 180 the satellite will be in sunlight and for 180 <  &eta; < 360 it will be eclipsed.  There will be small deviations in &eta; values at which these phases happen. You can appreciate this using simple geometry. 
+
+                      </p></td>
+  </tr>
+          <tr>
+            <td class="Textz">&nbsp;</td>
+          </tr>
+                   </table>

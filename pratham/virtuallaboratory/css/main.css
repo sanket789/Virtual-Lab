@@ -1,0 +1,83 @@
+@charset "utf-8";
+body {
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-bottom:10px;
+	margin-right:0px;
+}
+.Head {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	color: #000000;
+	font-weight: bold;
+}
+.Links {
+	color: #990000;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.Textz {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-align:justify;
+}
+.Question {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight:bold;
+}
+.PopupWin {
+	background-color: #FF9;
+	padding: 5px;
+	position: absolute;
+	border: 1px #CC0 solid;
+	overflow: hidden;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 10px;
+}
+.MainTab {
+	width:100%;
+	height:100%;
+}
+.OTextz {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF9900;
+}
+.OTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000033;
+	font-weight: bold;
+}
+
+.menutoplink a{font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #666666;
+	text-decoration:none}
+.menutoplink a:hover{color:#000000;
+	background-color:#288f36;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	}
+.ObodyTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FF6600;
+	font-weight: bold;
+}
+.Names {
+	color: #FF6600;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.BookContent {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
