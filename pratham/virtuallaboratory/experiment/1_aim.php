@@ -18,11 +18,11 @@
 (also called as angular rates) about its axes. The satellite is required to point
 in specific direction for proper functioning(refer the section: Requirement of
 control).
-The angular motion of satellite in body frame is governed by equation
-\begin{equation}
-I\dot{\bar{\omega}} = \bar{\tau}
-\end{equation}
-Where I is moment of inertia matrix in body frame and τ is torque acting on
+The angular motion of satellite in body frame is governed by equation</p>
+<img src="images/1.png" align="center" alt=
+"IW=tau" height="30" width="80">
+<p style="text-align:justify;" class="Textz">
+Where I is moment of inertia matrix in body frame and <img src="images/tau.png" align="center" alt="IW=tau" height="15" width="15"> is torque acting on
 the body. So as equation suggests, to change the angular velocity of satellite,
 torque has to be applied on it. In space environment there are external torques
 acting on the satellite. But the main source of the torque is the control torque
@@ -53,7 +53,7 @@ In this experiment we will simulate simplified situation. Instead of stabilizing
 <span class="OTitle">Detumbling and Nominal Mode</span>
 <p style="text-align:justify;" class="Textz">
 Generally there are two modes in satellites: Detumbling and Nominal.
- Detumbling is the process of stabilizing the angular rate of the satellite after orbital insertion. In detumbling mode, initial rates may be very high as the satellite is ejected from the launch vehicle. In this mode sensors like GPS are not available due to power constraints. Thus attitude of satellite is not known. So to bring down initial angular rates we have to use some coarse controller. In the case Pratham, only magnetometer is ON during detumbling. Using rate of change of magnetic field vector in body frame $(\mathbf{\dot{B}})$, we can estimate angular rates. Then proportional controller is applied to bring down the angular rates. This control algorithm is called as B-dot algorithm. If rates are below certain threshold for some time window then control is switched to nominal mode. </p>
+ Detumbling is the process of stabilizing the angular rate of the satellite after orbital insertion. In detumbling mode, initial rates may be very high as the satellite is ejected from the launch vehicle. In this mode sensors like GPS are not available due to power constraints. Thus attitude of satellite is not known. So to bring down initial angular rates we have to use some coarse controller. In the case Pratham, only magnetometer is ON during detumbling. Using rate of change of magnetic field vector in body frame, we can estimate angular rates. Then proportional controller is applied to bring down the angular rates. This control algorithm is called as B-dot algorithm. If rates are below certain threshold for some time window then control is switched to nominal mode. </p>
  <p style="text-align:justify;" class="Textz">
 In nominal mode, rates are low. We use PID controller to determine the attitude of the satellite and stabilize the Euler angles within required limits. The nominal controller is a fine controller.</p>
 

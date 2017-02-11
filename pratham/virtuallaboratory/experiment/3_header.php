@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -62,20 +63,20 @@ window.attachEvent("onload", expandone)
 		<td>
 			<!--<img src="images/index_02.gif" width="1000" height="35" alt="">--><div id="smoothmenu1" class="ddsmoothmenu">
       <ul>
-		<li><a href="/pratham/virtuallaboratory/index.php">Home</a></li>
-  		<li><a href="#">Experiment</a>
-        <ul>
-  			 <li><a href="/pratham/virtuallaboratory/experiment/polar1.php">Polar Orbit</a></li>
-       	 	<li><a href="/pratham/virtuallaboratory/experiment/equitorial1.php">Equitorial Orbit</a></li>
+      <li><a href="/pratham/virtuallaboratory/index.php">Home</a></li>
+		<li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Aim & Theory</a></li>
 
-          <li><a href="/pratham/virtuallaboratory/experiment/1_aim.php">Proportional Controller</a></li>
-          <li><a href="/pratham/virtuallaboratory/experiment/2_aim.php">Reference Frames & transformations</a></li>
-          <li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Heat Transfer</a></li>
-        </ul>
+		<li><a href="/pratham/virtuallaboratory/experiment/3_procedure.php">Procedure</a>
+        <!--<ul>
+    		<li><a href="#">Thermals</a></li>
+       	 	<li><a href="#">Controls</a></li>
+        	<li><a href="#">Payload</a></li>
+        </ul>-->
+  		</li>
+  		<li><a href="/pratham/virtuallaboratory/experiment/3_simulation.php">Simulation</a>
+        </li>
+        <li><a href="/pratham/virtuallaboratory/experiment/3_resources.php">Resources</a>
        	</li>
-  			<li><a href="/pratham/virtuallaboratory/faq.php">FAQ</a></li>
-       	<li><a href="/pratham/virtuallaboratory/feedback.php">Feedback</a></li>
-        <li><a href="/pratham/virtuallaboratory/contact.php">Contact us</a></li>
 </ul>
 <br style="clear: left" />
 </div></td>

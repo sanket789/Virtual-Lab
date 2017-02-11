@@ -10,7 +10,7 @@
 
 <span class="OTitle">Procedure</span>
 <p style="text-align:justify;" class="Textz">In proportional controller, controller output is proportional to the difference between reference value and current value of the variable. This term is also called as the error signal.
-In this case $\omega_{ref} = 0$ is desired (reference) value of angular rates. Thus at each step error term in angular rates i.e. &E = &omega - &omega_{ref} will be calculated. Then output of controller will be $K_P \times E$. This control torque will then drive the angular rates accordingly. 
+In this case <img src="images/wref.png" align="center" alt="w_ref=0" height="15" width="50"> is desired (reference) value of angular rates. Thus at each step error term in angular rates i.e. <img src="images/error.png" align="center" alt="error" height="15" width="75"> will be calculated. Then output of controller will be <img src="images/kp.png" align="center" alt="IW=tau" height="17" width="60">. This control torque will then drive the angular rates accordingly. 
 </p>
 <p style="text-align:justify;" class="Textz">In this experiment, simple proportional controlled is applied to reduce the angular rates of the satellite. </p>
 
