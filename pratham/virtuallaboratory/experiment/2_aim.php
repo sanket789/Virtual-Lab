@@ -33,7 +33,7 @@ different frames associated with satellite motion will be explained.</p>
 last part of the experiment, simulation for sun vector and magnetic field vector
 transformation will be provided.</p>
 <span class="OTitle">ECIF (Earth Centered Inertial Frame)</span>
-<p style="text-align:justify;" class="Textz">ECI frame has its origin at the center of mass of the earth. Axes of ECI frame
+<p style="text-align:justify;" class="Textz">ECI frame has its origin at the center of  the earth. Axes of ECI frame
 are as follows:</p>
 <ul style="text-align:justify;" class="Textz">
 <li><b>X → First point of Aries:</b> On the day of March equinox(equal day
@@ -48,14 +48,14 @@ Since the center of mass of earth is itself accelerating around the sun, ECI fra
 is not exactly inertial frame. But for specifying the orbital motion of satellite
 it is assumed to be inertial without any adverse effect.</p>
 <figure>
-  <img src="ecif.png" alt="ECIF" width="304" height="228">
+  <img src="images/ecif.png" alt="ECIF" width="304" height="228">
   <figcaption>Fig1. - ECIF Co-ordinates.</figcaption>
 </figure>
 
 <span class="OTitle">Orbit Frame</span>
 <p style="text-align:justify;" class="Textz">Orbit frame is the frame revolving around earth along with satellite. This frame
 is non-inertial frame of reference since its accelerating with respect to inertial
-frame. Its is centered at center of mass of the satellite. Axes of orbit frame are
+frame. Its is centered at geometric center of the satellite. Axes of orbit frame are
 defined as:</p>
 <ul style="text-align:justify;" class="Textz">
 <li><b>X </b>→ In the plane of orbit along the velocity direction</li>
@@ -70,7 +70,7 @@ to orbit frame in desired manner. In case of Pratham, goal of controller is to
 align body frame with orbit frame.
 These three frames can be visualized as shown in the following figure:
 <figure>
-  <img src="allFrames" alt="allFrames" width="304" height="228">
+  <img src="images/allFrames.png" alt="allFrames" width="304" height="228">
   <figcaption>Fig2. - I: ECIF, R: Orbit frame, B:Body frame.</figcaption>
 </figure>
     </div>

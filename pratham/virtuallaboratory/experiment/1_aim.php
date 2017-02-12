@@ -31,8 +31,7 @@ on angular rates using proportional controller. Note that, in this experiment
 external torques are neglected for simplicity.</p>
 <span class="OTitle">Requirement of Control</span>
 <p style="text-align:justify;" class="Textz">Generally, from different requirements (as elaborated below), it is needed that
-the satellite should point in a specified direction. Thus if we consider frame definitions according to previous experiment, Euler angles (https://en.wikipedia.
-org/wiki/Euler_angles)between orbit frame and body frame should be zero .
+the satellite should point in a specified direction. Thus if we consider frame definitions according to previous experiment, Euler angles (https://en.wikipedia.org/wiki/Euler_angles)between orbit frame and body frame should be zero .
 This requirement generally arises due to following reasons:
 <ul style="text-align:justify;" class="Textz">
 <li><b>Communication:</b> Satellite sends and receives the data in form of electromagnetic waves from ground stations on the earth. This communication

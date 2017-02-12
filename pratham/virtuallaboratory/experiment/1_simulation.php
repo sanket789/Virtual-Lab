@@ -17,17 +17,17 @@
 <table border="0" align="center" style="text-align:left">
 
     <tr>
-    <td class="Textz">Angular rate in 'x-axis' (in rad per sec)</td>
+    <td class="Textz">Angular rate in 'x-axis' (in degrees per sec)</td>
     <td class="Textz"><input name="wx" value="0" type="number" max="15" /></td>
     </tr>
 
     <tr>
-    <td class="Textz">Angular rate in 'y-axis' (in rad per sec)</td>
+    <td class="Textz">Angular rate in 'y-axis' (in degrees per sec)</td>
     <td class="Textz"><input name="wy" value="0" type="number" max="15" /></td>
     </tr>
 
 	<tr>
-    <td class="Textz">Angular rate in 'z-axis' (in rad per sec)</td>
+    <td class="Textz">Angular rate in 'z-axis' (in degrees per sec)</td>
     <td class="Textz"><input name="wz" value="0" type="number" max="15" /></td>
     </tr>
     </table><br />
@@ -45,7 +45,7 @@
 <script type="text/javascript" >
 		f = function func(t, x1){
     		var xdot=[0,0,0,0,0,0,0];
-    		var Kp=2;
+    		var Kp=1;
     		var wref=[0,0,0];
     		var q=[x1[0], x1[1], x1[2], x1[3]];
     		var w=[x1[4], x1[5], x1[6]];
@@ -62,17 +62,21 @@
 
 		//var xinit = [0,0,0,1,x[0].value,x[1].value,x[2].value];
     var xinit = [0,0,0,1];
-		xinit.push(+x[0].value);
-		xinit.push(+x[1].value);
-		xinit.push(+x[2].value);
+    w0_x = (+x[0].value)*Math.PI/180
+    w0_y = (+x[1].value)*Math.PI/180
+    w0_z = (+x[2].value)*Math.PI/180
+		xinit.push(w0_x);
+		xinit.push(w0_y);
+		xinit.push(w0_z);
     //var xinit = [0,0,0,1,0.1,0.1,0.1]
 		var sol = numeric.dopri(0,6,xinit,f );
 		a=sol.x;
     //var trial = +x[0].value + +x[1].value;
-		console.log(a);
+		
 		b=numeric.transpose(sol.y);
-		c=[a,b[4]];
+		c=[a,numeric.mul((180/Math.PI),b[4]),numeric.mul((180/Math.PI),b[5]),numeric.mul((180/Math.PI),b[6])];
 		d=numeric.transpose(c);
+    console.log(Math.PI);
 		//var c=numeric.transpose(a);
 
 				/*var text = "";
@@ -84,13 +88,15 @@
     	document.getElementById("answer").innerHTML = text;
     */
     	google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawBasic);
+google.charts.setOnLoadCallback(drawCurveTypes);
 
-function drawBasic() {
+function drawCurveTypes() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 't');
+      data.addColumn('number', 'w_x');
+      data.addColumn('number', 'w_y');
+      data.addColumn('number', 'w_z');
 
       data.addRows(d);
 
@@ -99,7 +105,10 @@ function drawBasic() {
           title: 'Time'
         },
         vAxis: {
-          title: 'Popularity'
+          title: 'Angular velocity'
+        },
+        series: {
+          1: {curveType: 'function'}
         }
       };
 
@@ -107,6 +116,7 @@ function drawBasic() {
 
       chart.draw(data, options);
     }
+
 }
       </script>
 	
