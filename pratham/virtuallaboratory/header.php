@@ -67,10 +67,10 @@ window.attachEvent("onload", expandone)
         <ul>
   			 <li><a href="/pratham/virtuallaboratory/experiment/polar1.php">Polar Orbit</a></li>
        	 	<li><a href="/pratham/virtuallaboratory/experiment/equitorial1.php">Equitorial Orbit</a></li>
-
           <li><a href="/pratham/virtuallaboratory/experiment/1_aim.php">Proportional Controller</a></li>
           <li><a href="/pratham/virtuallaboratory/experiment/2_aim.php">Reference Frames & transformations</a></li>
           <li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Heat Transfer</a></li>
+          <li><a href="/pratham/virtuallaboratory/experiment/4_aim.php">Doppler shift in signal frequency</a></li>
         </ul>
        	</li>
   			<li><a href="/pratham/virtuallaboratory/faq.php">FAQ</a></li>
