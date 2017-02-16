@@ -59,7 +59,7 @@
     	}
 	function prop(){
 		var x = document.getElementById("form1");
-
+    
 		//var xinit = [0,0,0,1,x[0].value,x[1].value,x[2].value];
     var xinit = [0,0,0,1];
     w0_x = (+x[0].value)*Math.PI/180
@@ -68,6 +68,7 @@
 		xinit.push(w0_x);
 		xinit.push(w0_y);
 		xinit.push(w0_z);
+    
     //var xinit = [0,0,0,1,0.1,0.1,0.1]
 		var sol = numeric.dopri(0,6,xinit,f );
 		a=sol.x;
@@ -76,7 +77,7 @@
 		b=numeric.transpose(sol.y);
 		c=[a,numeric.mul((180/Math.PI),b[4]),numeric.mul((180/Math.PI),b[5]),numeric.mul((180/Math.PI),b[6])];
 		d=numeric.transpose(c);
-    console.log(Math.PI);
+    
 		//var c=numeric.transpose(a);
 
 				/*var text = "";
