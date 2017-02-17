@@ -76,7 +76,7 @@
     <td><span class="empty">&nbsp;</span></td>
   </tr>
   <tr>
-    <td class="Textz">This is a collection of 3 experiments related to satellites.  They help one understand 3 major subsystems of a satellite.</td>
+    <td class="Textz">This is a collection of experiments related to satellites.  They help one understand 3 major subsystems of a satellite.</td>
   </tr>
   <tr>
     <td><span class="empty">&nbsp;</span></td>
@@ -96,7 +96,7 @@
    <td><span class="empty">&nbsp;</span></td>
   </tr>
   <tr>
-    <td class="Textz"><div align="justify">These experiments are offered by ISSP (IIT Bombay Student Satellite Project).  ISSP started as an initiative of UG students in July 2007 and aims to conceive, design and develop a micro-Satellite named ‘Pratham’ and get it into orbit with the help of ISRO.</div></td>
+    <td class="Textz"><div align="justify">These experiments are offered by ISSP (IIT Bombay Student Satellite Project).  ISSP started as an initiative of UG students in July 2007 and aims to conceive, design and develop a micro-Satellite named ‘Pratham’ and get it into orbit with the help of ISRO. This goal culminated in a success when Pratham was launched in the space on 26th September, 2016.</div></td>
   </tr>
   <tr>
     <td><span class="empty">&nbsp;</span></td>

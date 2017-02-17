@@ -27,7 +27,7 @@ Most of the Satellites are launched in Low Earth Orbit, with altitudes within 40
     </tr>-->
     <tr><td>&nbsp;</td></tr>
     <tr>
-      <td align="center"><div align="center"><span class="Textz">Geosynchronous Orbit:</span><br /><img src="http://www.thetech.org/exhibits/online/satellite/images/animations/geoanim.gif" alt="Image 6" /></div></td>
+      <td align="center"><div align="center"><span class="Textz">Geosynchronous Orbit:</span><br /><img src="images/geo.gif" alt="Image 6" /></div></td>
     </tr>
     <tr><td><br /><br /><hr><br /><br /></td></tr>
     <tr>

@@ -64,7 +64,6 @@ window.attachEvent("onload", expandone)
 			<!--<img src="images/index_02.gif" width="1000" height="35" alt="">--><div id="smoothmenu1" class="ddsmoothmenu">
       <ul>
      <li><a href="/pratham/virtuallaboratory/index.php">Home</a></li>
-		<li><a href="#">Aim</a></li>
         <li><a href="#">Theory</a>
         <ul>
   			<li><a href="/pratham/virtuallaboratory/thermals.php">Solar Radiation</a></li>
@@ -79,9 +78,9 @@ window.attachEvent("onload", expandone)
         	<li><a href="#">Payload</a></li>
         </ul>-->
   		</li>
-  		<li><a href="#">Simulation</a>
+  		<li><a href="/pratham/virtuallaboratory/experiment/experiment.php">Simulation</a>
         </li>
-        <li><a href="#">Resources</a>
+        <li><a href="/pratham/virtuallaboratory/reference.php">Resources</a>
        	</li>
 </ul>
 <br style="clear: left" />

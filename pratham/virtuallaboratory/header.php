@@ -65,8 +65,7 @@ window.attachEvent("onload", expandone)
 		<li><a href="/pratham/virtuallaboratory/index.php">Home</a></li>
   		<li><a href="#">Experiment</a>
         <ul>
-  			 <li><a href="/pratham/virtuallaboratory/experiment/polar1.php">Polar Orbit</a></li>
-       	 	<li><a href="/pratham/virtuallaboratory/experiment/equitorial1.php">Equitorial Orbit</a></li>
+  			 <li><a href="/pratham/virtuallaboratory/experiment/experiment.php">Heat Flux</a></li>
           <li><a href="/pratham/virtuallaboratory/experiment/1_aim.php">Proportional Controller</a></li>
           <li><a href="/pratham/virtuallaboratory/experiment/2_aim.php">Reference Frames & transformations</a></li>
           <li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Heat Transfer</a></li>

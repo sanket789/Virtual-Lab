@@ -1,4 +1,4 @@
-<?php require_once("header.php"); ?>
+<?php require_once("experiment/header.php"); ?>
 <table width="800" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
   <tr><td><table width="770" border="0" cellspacing="0" cellpadding="0" align="center">
   	<tr><td colspan="2">&nbsp;</td></tr>
