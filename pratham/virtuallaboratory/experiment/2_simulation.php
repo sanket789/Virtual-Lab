@@ -61,7 +61,7 @@ in orbit frame using same transformation.</p>
 
 <script type="text/javascript" >
 function prop(){
-	var rad_earth = 6400;
+	var rad_earth = 6371;
 	var x = document.getElementById("form1");
   var alt = +x[0].value;
   var inc = +x[1].value;
@@ -86,18 +86,10 @@ function prop(){
 	
 	for (i=0;i<(sol.x).length;i++)
 	{	
-		var time = new Date("18-Oct-2010 10:30:0");
+		var time = new Date("18-Oct-2015 10:30:0");
    
-		var lat = Math.atan2(z[i],Math.sqrt(x[i]*x[i]+y[i]*y[i]));
-    var lon;
-    if(x[i]<0 && y[i]>0)
-      {lon =  Math.atan2(y[i],x[i])+Math.PI/2;}
-    else if(x[i]<0 && y[i]<0)
-      {lon = Math.atan2(y[i],x[i])-Math.PI/2;}
-    else{lon = Math.atan2(y[i],x[i]);}
-		
-		var alt = Math.sqrt(x[i]*x[i]+y[i]*y[i]+z[i]*z[i])-rad_earth*1000;
-		var B_calc = mag_calc(lat,lon,alt,time,i);
+	
+		var B_calc = mag_calc(x[i],y[i],z[i],time,i);
 		
 		B_I.push(B_calc);
 		
@@ -135,7 +127,7 @@ function prop(){
   B_O_T = numeric.transpose(B_O);
   d_I_B = numeric.transpose([a,B_I_T[0],B_I_T[1],B_I_T[2]]);
   d_O_B = numeric.transpose([a,B_O_T[0],B_O_T[1],B_O_T[2]]);
-	
+	//console.log(d_I_B[0],d_I_B[1],d_I_B[2]);
 
 	
 	google.charts.load('current', {packages: ['corechart', 'line']});
@@ -153,8 +145,9 @@ function prop(){
       data1.addRows(d_I_S);
 
       var options1 = {
+        title:'Sun Vector in Inertial Frame'  ,
         hAxis: {
-          title: 'Time'
+          title: 'Time (in sec)'
         },
         vAxis: {
           title: 'Sun Vector in Inertial Frame'
@@ -179,8 +172,9 @@ function prop(){
       data2.addRows(d_O_S);
 
       var options2 = {
+        title:'Sun Vector in Orbit Frame',
         hAxis: {
-          title: 'Time'
+          title: 'Time (in sec)'
         },
         vAxis: {
           title: 'Sun Vector in Orbit Frame'
@@ -204,11 +198,12 @@ function prop(){
       data3.addRows(d_I_B);
 
       var options3 = {
+        title: 'Magnetic Field Vector in Inertial Frame',
         hAxis: {
-          title: 'Time'
+          title: 'Time {in sec)'
         },
         vAxis: {
-          title: 'Magnetic Field Vector in Inertial Frame'
+          title: 'Magnetic Field (in nT)'
         },
         series: {
           1: {curveType: 'function'}
@@ -229,11 +224,12 @@ function prop(){
       data4.addRows(d_O_B);
 
       var options4 = {
+        title: 'Magnetic Field Vector in Orbit Frame',
         hAxis: {
-          title: 'Time'
+          title: 'Time (in sec)'
         },
         vAxis: {
-          title: 'Magnetic Field Vector in Orbit Frame'
+          title: 'Magnetic Field (in nT)'
         },
         series: {
           1: {curveType: 'function'}
@@ -257,32 +253,53 @@ function f(t,x1)
 	return xdot;
 }
 
-function mag_calc(lat,lon,alt,time,T1){
+function mag_calc(x_i,y_i,z_i,time,T1){
+
+var equinox = new Date("20-Mar-2015 22:45:0");// date of equinox
+  var phi = (time-equinox)/1000 + T1;
+    phi = phi*2*Math.PI/86400
+    var ecef2eci = [[Math.cos(phi), -Math.sin(phi), 0],[Math.sin(phi), Math.cos(phi), 0], [0,0,1]];
+
+  var alt = Math.sqrt(x_i*x_i+y_i*y_i+z_i*z_i)-6371*1000;
+  var XYZ_ecef =  numeric.dot(numeric.transpose(ecef2eci),[x_i,y_i,z_i]);
+  var x = XYZ_ecef[0];
+  var y = XYZ_ecef[1];
+  var z = XYZ_ecef[2];
+
+  var lat = Math.atan2(z,Math.sqrt(x*x+y*y));
+  lat = 180*lat/Math.PI
+  var lon;
+  if(x<0 && y>0)
+    {lon =  Math.atan2(y,x);}
+  else if(x<0 && y<0)
+    {lon = Math.atan2(y,x);}
+  else{lon = Math.atan2(y,x);}
+  lon = 180*lon/Math.PI
+
+  var mu = lat*Math.PI/180;
+    var i = lon*Math.PI/180;
+    var ned2ecef = [[-Math .sin(mu)*Math.cos(i),-Math.sin(i),-Math.cos(mu)*Math.cos(i)],[-Math.sin(mu)*Math.sin(i),Math.cos(i),-Math.cos(mu)*Math.sin(i)],[Math.cos(mu),0,-Math.sin(mu)]];
 	var cof = syncXHR('WMM.COF');
     wmm = cof2Obj(cof);
     geoMag = geoMagFactory(wmm);
-    
+    alt = alt*3.28084;
     mygeoMag = geoMag(lat,lon,alt,time);
     magneticBX = mygeoMag.bx;  // North Component of the geomagnetic field in nT
     magneticBY = mygeoMag.by;   // East Component of the geomagnetic field in nT
     magneticBZ = mygeoMag.bz; 
-    var equinox = new Date("21-Mar-2010 12:0:0");// date of equinox
-    var mu = lat*Math.PI/180;
-    var i = lon*Math.PI/180;
-    var ned2ecef = [[-Math .sin(mu)*Math.cos(i),-Math.sin(i),-Math.cos(mu)*Math.cos(i)],[-Math.sin(mu)*Math.sin(i),Math.cos(i),-Math.cos(mu)*Math.sin(i)],[Math.cos(mu),0,-Math.sin(mu)]];
+    
     var b_ecef = numeric.dot(ned2ecef,[magneticBX, magneticBY, magneticBZ]);
    
-    var phi = (time-equinox)/1000 + T1;
-    phi = phi*2*Math.PI/86400
-    var ecef2eci = [[Math.cos(phi), -Math.sin(phi), 0],[Math.sin(phi), Math.cos(phi), 0], [0,0,1]];
+    
     b_ecef = numeric.dot(ecef2eci,b_ecef);
 
+    //return [magneticBX, magneticBY, magneticBZ];
     return b_ecef;
 }
 
 function sun_calc(T1,time){
 	
-    var equinox = new Date("21-Mar-2010 12:0:0");// date of equinox
+    var equinox = new Date("20-Mar-2015 22:45:0");// date of equinox
 
     var beta = 0;   
     var time1 = (time - equinox)/86400000 + T1/ 86400;
