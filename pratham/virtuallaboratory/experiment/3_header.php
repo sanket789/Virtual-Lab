@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,10 +12,10 @@
 <script type="text/javascript" src="js/heattransfer.js"></script>
 <script type="text/javascript">
 ddsmoothmenu.init({
-	mainmenuid: "smoothmenu1",
-	orientation: 'h', 
-	classname: 'ddsmoothmenu', 
-	contentsource: "markup"
+  mainmenuid: "smoothmenu1",
+  orientation: 'h', 
+  classname: 'ddsmoothmenu', 
+  contentsource: "markup"
 })
 </script>
 <script type="text/javascript">
@@ -60,24 +59,20 @@ window.attachEvent("onload", expandone)
     </center></td>
   </tr>
   <tr>
-		<td>
-			<!--<img src="images/index_02.gif" width="1000" height="35" alt="">--><div id="smoothmenu1" class="ddsmoothmenu">
+    <td>
+      <!--<img src="images/index_02.gif" width="1000" height="35" alt="">--><div id="smoothmenu1" class="ddsmoothmenu">
       <ul>
       <li><a href="/pratham/virtuallaboratory/index.php">Home</a></li>
-		<li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Aim & Theory</a></li>
+    <li><a href="/pratham/virtuallaboratory/experiment/3_aim.php">Aim & Theory</a></li>
 
-		<li><a href="/pratham/virtuallaboratory/experiment/3_procedure.php">Procedure</a>
-        <!--<ul>
-    		<li><a href="#">Thermals</a></li>
-       	 	<li><a href="#">Controls</a></li>
-        	<li><a href="#">Payload</a></li>
-        </ul>-->
-  		</li>
-  		<li><a href="/pratham/virtuallaboratory/experiment/3_simulation.php">Simulation</a>
-        </li>
+  
+        <li><a href="/pratham/virtuallaboratory/experiment/3_simulation.php">Simulation 1</a></li>
+        <li><a href="/pratham/virtuallaboratory/experiment/3_simulation1.php">Simulation 2</a></li>
+        <!--<li><a href="#">Simulation 3</a></li>-->
+      
         <li><a href="/pratham/virtuallaboratory/experiment/3_resources.php">Resources</a>
-       	</li>
+        </li>
 </ul>
 <br style="clear: left" />
 </div></td>
-	</tr></table>
+  </tr></table>

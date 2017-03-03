@@ -7,33 +7,42 @@
     </tr>
     <tr><td>&nbsp;</td></tr>
     <tr><td><ul type="disc">
+      <li><span class="Textz">For queries related to Pratham Project kindly contact
+            </span>
+            <blockquote>
+              <blockquote>
+                <p class="Names">Mr Ratnesh Mishra &lt;ratnesh1607@gmail.com&gt;</p>
+                <p class="Names">Mr Yash Sanghvi &lt;pianostar95@gmail.com&gt;</p>
+              </blockquote>
+            </blockquote>
+          </li>
       <li><span class="Textz">For technical queries related to thermals experiment kindly contact   
         </span>
         <blockquote>
           <blockquote>
-            <p class="Names">Mr Manas Rachh &lt;manasrachh@gmail.com&gt;</p>
+            <p class="Names">Mr Anmol Sikka &lt;anmolsikka09@gmail.com&gt;</p>
           </blockquote>
         </blockquote>
       </li>
+    
+          <li><span class="Textz">For queries related to Controls experiment kindly contact
+            </span>
+            <blockquote>
+              <blockquote>
+                <p class="Names">Mr Sanket Chirame &lt;sanketchirame12@gmail.com&gt;</p>
+              </blockquote>
+            </blockquote>
+          </li>
     
           <li><span class="Textz">For queries related to Payload experiment kindly contact
             </span>
             <blockquote>
               <blockquote>
-                <p class="Names">"Subhasis Das" &lt;subhasis256@gmail.com&gt;</p>
+                <p class="Names">Mr Aditya Singhal &lt;adiaggarwal26@gmail.com&gt;</p>
               </blockquote>
             </blockquote>
           </li>
-    
-          <li><span class="Textz">For queries related to Pratham Project kindly contact
-            </span>
-            <blockquote>
-              <blockquote>
-                <p class="Names">Mr Saptarshi Bandyopadhyay &lt;saptarshi.bandyopadhyay@gmail.com&gt;</p>
-              </blockquote>
-            </blockquote>
-          </li>
-    
+    <!--
           <li><span class="Textz">For queries related to institutional support to Pratham activities contact
             </span>
             <blockquote>
@@ -42,6 +51,7 @@
               </blockquote>
             </blockquote>
           </li>
+    -->
     </ul>
         </td>
     </tr>

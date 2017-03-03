@@ -19,10 +19,17 @@ from a source which has a relative motion with the observer then there is a
 change in wavelength or frequency of the signal wave.
 The above can be well related to a scene where you are standing along the
 roadside and a speeding car passes in front of you. When the car is moving towards you, you can easily figure out an increase in frequency making it highly pitched and as it goes away from you, the observed frequency is reduced.</p>
-
+<figure>
+  <img src="images/police.png" alt="Doppler effect" width="325" height="200">
+  <figcaption>Fig1. - Doppler effect of a passing by Police car</figcaption>
+</figure>
 <span class="OTitle">Classical Doppler Effect</span>
 <p style="text-align:justify;" class="Textz">
 As we have seen that the relative motion of the source and observer is the fundamental cause for the change in wavelength and hence the frequency of the original signal wave generated from the source. When the relative distance between the source and the observer decreases, each successive wave crest is transmitted from the position which is more closer to the observer. Hence, the time between the arrival of successive wave crests at the observer is reduced, causing an decrease in the wavelength ad increase in the frequency. This particularly can happen when the source is moving towards the observer or the observer is moving towards from the source.</p>
+<figure>
+  <img src="images/signal.png" alt="Relative motion of signal" width="400" height="150">
+  <figcaption>Fig2. - Fundamental effect of relative motion on signal generated</figcaption>
+</figure>
 <p style="text-align:justify;" class="Textz">
 Similarly, when the relative distance between the source ans the observer
 increases, each wave is emitted from a position farther from the observer than
@@ -30,7 +37,10 @@ the previous wave. So the arrival time between successive waves is increased,
 increasing the wavelength and reducing the frequency. This can be the case
 when the source is moving away from the observer or the observer is moving
 away from the source.</p>
-
+<figure>
+  <img src="images/distance.png" alt="Distance approach " width="500" height="280">
+  <figcaption>Fig3. - Distance approach of Doppler effect</figcaption>
+</figure>
 <span class="OTitle">Doppler Effect Formulation</span>
 <p style="text-align:justify;" class="Textz">The above observations can be deduced into simple formulations using the
 wavelength and frequency relation. The formula for Doppler effect is as
