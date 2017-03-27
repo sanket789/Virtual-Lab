@@ -31,12 +31,12 @@ in orbit frame using same transformation.</p>
 <table border="0" align="center" style="text-align:left">
 <tr>
     <td class="Textz">Altitude (in km)</td>
-    <td class="Textz"><input name="alt" value="600" type="number" max="1000" /></td>
+    <td class="Textz"><input name="alt"  type="number" max="1000" /></td>
     </tr>
 
     <tr>
     <td class="Textz">Inclination (in degrees)</td>
-    <td class="Textz"><input name="inc" value="98" type="number" max="180 " /></td>
+    <td class="Textz"><input name="inc"  type="number" max="180 "/></td>
     </tr>
 
     </table><br />
@@ -61,16 +61,17 @@ in orbit frame using same transformation.</p>
 
 <script type="text/javascript" >
 function prop(){
-	var rad_earth = 6371;
+	var rad_earth = 6378.164;
 	var x = document.getElementById("form1");
   var alt = +x[0].value;
   var inc = +x[1].value;
-
+//console.log(alt,inc);
 	inc = inc*Math.PI/180;
   var v = Math.sqrt(3.99*Math.pow(10,14)/(1000*(alt + rad_earth)));
 	//var xinit = [-7061909.96247724,-516745.227013821,-14659.9341567393, -85.4453629760447 ,1064.51048588373 ,7427.29881205264];
   var xinit = [1000*(alt + rad_earth),0, 0, 0,-v*Math.cos(inc), v*Math.sin(inc)];
-  
+  //console.log(xinit)
+  //console.log([-7061909.96247724,-516745.227013821,-14659.9341567393, -85.4453629760447 ,1064.51048588373 ,7427.29881205264]);
 	var sol = numeric.dopri(0,10000,xinit,f );
 	var b = numeric.transpose(sol.y);
 	var x = b[0];
@@ -106,7 +107,7 @@ function prop(){
 		var ox = [oy[1]*oz[2]-oy[2]*oz[1], oy[2]*oz[0]-oy[0]*oz[2], oy[0]*oz[1]-oy[1]*oz[0]];
 		
 		ox = numeric.mul(1/Math.sqrt(ox[0]*ox[0]+ox[1]*ox[1]+ox[2]*ox[2]),ox);
-		var TOI = numeric.transpose([[ox[0],ox[1],ox[2]],[oy[0],oy[1],oy[2]],[oz[0],oz[1],oz[2]]]);
+		var TOI = [[ox[0],ox[1],ox[2]],[oy[0],oy[1],oy[2]],[oz[0],oz[1],oz[2]]];
 
 
 		var v_S_O = numeric.dot(TOI,S_calc);
@@ -258,10 +259,10 @@ function mag_calc(x_i,y_i,z_i,time,T1){
 var equinox = new Date("20-Mar-2015 22:45:0");// date of equinox
   var phi = (time-equinox)/1000 + T1;
     phi = phi*2*Math.PI/86400
-    var ecef2eci = [[Math.cos(phi), -Math.sin(phi), 0],[Math.sin(phi), Math.cos(phi), 0], [0,0,1]];
+    var eci2ecef = [[Math.cos(phi), -Math.sin(phi), 0],[Math.sin(phi), Math.cos(phi), 0], [0,0,1]];
 
   var alt = Math.sqrt(x_i*x_i+y_i*y_i+z_i*z_i)-6371*1000;
-  var XYZ_ecef =  numeric.dot(numeric.transpose(ecef2eci),[x_i,y_i,z_i]);
+  var XYZ_ecef =  numeric.dot(eci2ecef,[x_i,y_i,z_i]);
   var x = XYZ_ecef[0];
   var y = XYZ_ecef[1];
   var z = XYZ_ecef[2];
@@ -291,10 +292,10 @@ var equinox = new Date("20-Mar-2015 22:45:0");// date of equinox
     var b_ecef = numeric.dot(ned2ecef,[magneticBX, magneticBY, magneticBZ]);
    
     
-    b_ecef = numeric.dot(ecef2eci,b_ecef);
+    var b_eci = numeric.dot(numeric.transpose(eci2ecef),b_ecef);
 
     //return [magneticBX, magneticBY, magneticBZ];
-    return b_ecef;
+    return b_eci;
 }
 
 function sun_calc(T1,time){
